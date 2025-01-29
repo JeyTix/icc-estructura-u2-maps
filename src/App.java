@@ -29,6 +29,18 @@ public class App {
         empCtrl.addEmpleado(new Empleado(1,"Pablo", "Senior"));
         empCtrl.addEmpleado(new Empleado(2,"Juan", "Senior"));
         empCtrl.addEmpleado(new Empleado(3,"Andres", "Senior"));
+
+        System.out.println("\t----- Solo Empleado -----");
+        empCtrl.displayEmpleado();
+        System.out.println("\n\t----- Solo Nombres -----");
+        empCtrl.displayEmpleadoSoloNombres();
+        System.out.println("\t\n----- Solo Llaves -----");
+        empCtrl.displayLlaves();
+        System.out.println("\n\t----- TODO -----");
+        empCtrl.displayTodos();
+        System.out.println("\n\t----- Solo Values -----");
+        empCtrl.displayEmpleadoValues();
+        System.out.println();
     }
 
     private static void runMapExamlpe() {
