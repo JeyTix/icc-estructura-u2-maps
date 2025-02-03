@@ -1,5 +1,5 @@
 import controllers.Ejercicios;
-import controllers.EmpleadoContoller;
+import controllers.EmpleadoController;
 import controllers.Mapa;
 
 import models.Empleado;
@@ -10,37 +10,36 @@ public class App {
         // Ejecuta el ejemplo de uso de HashMap con ejemplos sencillos
         // runMapExamlpe();
 
-        // Ejecuta el ejemplo de gestión de empleados usando HashMap
-        runEmpleadoExample();
+        // // Ejecuta el ejemplo de gestión de empleados usando HashMap
+        // runEmpleadoExample();
 
-        // Ejecuta los ejercicios de sumatoria y anagramas
+        // // Ejecuta los ejercicios de sumatoria y anagramas
         // runEjerccios();
+
+        runEjerccios();
     }
 
     private static void runEmpleadoExample() {
-        // EmpleadoContoller empleadoContoller = new EmpleadoContoller();
+        // EmpleadoController empCtrl = new EmpleadoController();
 
-        // boolean result = empleadoContoller.addEmpleado(new Empleado(1, "Pablo", "Senior"));
-        // System.out.println("Ingreso: "+result);
-        // boolean result1 = empleadoContoller.addEmpleado(new Empleado(1, "Pablo", "Senior"));
-        // System.out.println("Ingreso: "+result1);
+        // boolean result = empCtrl.addEmpleado(new Empleado(1, "Pablo", "Senior"));
+        // System.out.println("Ingreso " + result); 
 
-        EmpleadoContoller empCtrl= new EmpleadoContoller();
-        empCtrl.addEmpleado(new Empleado(1,"Pablo", "Senior"));
-        empCtrl.addEmpleado(new Empleado(2,"Juan", "Senior"));
-        empCtrl.addEmpleado(new Empleado(3,"Andres", "Senior"));
+        // result = empCtrl.addEmpleado(new Empleado(4, "Carlos", "Junior"));
+        // System.out.println("Ingreso " + result); 
 
-        System.out.println("\t----- Solo Empleado -----");
-        empCtrl.displayEmpleado();
-        System.out.println("\n\t----- Solo Nombres -----");
-        empCtrl.displayEmpleadoSoloNombres();
-        System.out.println("\t\n----- Solo Llaves -----");
-        empCtrl.displayLlaves();
-        System.out.println("\n\t----- TODO -----");
-        empCtrl.displayTodos();
-        System.out.println("\n\t----- Solo Values -----");
-        empCtrl.displayEmpleadoValues();
-        System.out.println();
+        // empCtrl.addEmpleado(new Empleado(5, "Juan", "Senior"));
+        // empCtrl.addEmpleado(new Empleado(6, "Andres", "Senior"));
+
+        // System.out.println("\nLista de empleados:");
+        // empCtrl.displayEmpleados();
+
+        // System.out.println("\nSolo nombres:");
+        // empCtrl.displayEmpleadosSoloNombres();
+        // System.out.println("\nLlaves:");
+        // empCtrl.displayKeys();
+        // System.out.println("\nEmpleados:");
+        // empCtrl.displayEmpleadosSinEntrySet();
     }
 
     private static void runMapExamlpe() {
@@ -48,7 +47,29 @@ public class App {
     }
 
     private static void runEjerccios() {
-        throw new UnsupportedOperationException("Not implemented yet");
-
+        Ejercicios ejercicios = new Ejercicios();
+        
+        // Prueba del método areAnagrams
+        System.out.println("\nEjercicio de anagramas:");
+        System.out.println("Input: str1 = \"listen\", str2 = \"silent\"");
+        System.out.println("Output: " + ejercicios.areAnagrams("listen", "silent"));
+        
+        System.out.println("Input: str1 = \"hello\", str2 = \"bello\"");
+        System.out.println("Output: " + ejercicios.areAnagrams("hello", "bello"));
+    
+        System.out.println("Input: str1 = \"triangle\", str2 = \"integral\"");
+        System.out.println("Output: " + ejercicios.areAnagrams("triangle", "integral"));
+    
+        // Prueba del método sumatoriaDeDos
+        System.out.println("\nEjercicio de sumatoria de dos números:");
+    
+        int[] resultadoA = ejercicios.sumatoriaDeDos(new int[]{9, 2, 3, 6}, 5);
+        int[] resultadoB = ejercicios.sumatoriaDeDos(new int[]{9, 2, 3, 6}, 5);
+    
+        System.out.println("Input: nums = [9,2,3,6], objetivo = 5");
+        System.out.println("Output: " + (resultadoA != null ? "[" + resultadoA[0] + ", " + resultadoA[1] + "]" : "null"));
+    
+        System.out.println("Input: nums = [9,2,3,6], objetivo = 10");
+        System.out.println("Output: " + (resultadoB != null ? "[" + resultadoB[0] + ", " + resultadoB[1] + "]" : "null"));
     }
 }
